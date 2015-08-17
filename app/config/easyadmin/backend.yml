@@ -1,0 +1,6 @@
+easy_admin:
+    entities:
+        - AppBundle\Entity\Article
+        - AppBundle\Entity\Movie
+        - AppBundle\Entity\Person
+        - AppBundle\Entity\User
