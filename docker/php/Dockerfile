@@ -43,9 +43,10 @@ RUN export VERSION=`php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;"` \
     && echo "extension=blackfire.so\nblackfire.agent_socket=\${BLACKFIRE_PORT}" > $PHP_INI_DIR/conf.d/blackfire.ini
 
 # Some conf
-COPY php.ini /usr/local/etc/php/php.ini
-COPY apache.conf /etc/apache2/sites-available/apache.conf
-RUN a2ensite apache
+COPY docker.ini /usr/local/etc/php/conf.d/docker.ini
+COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+COPY docker.conf /etc/apache2/sites-available/docker.conf
+RUN a2ensite docker
 RUN a2enmod rewrite
 
 # Tweak user www-data

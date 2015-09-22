@@ -5,10 +5,11 @@
 /app/logs/*
 !app/logs/.gitkeep
 /app/phpunit.xml
-/bin/
+/bin/*
+!bin/.gitkeep
+!bin/*.sh
 /composer.phar
 /vendor/
 /web/bundles/
-
 /docker/mysql/data/*
 !docker/mysql/data/.gitkeep

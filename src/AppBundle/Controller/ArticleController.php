@@ -15,6 +15,7 @@ class ArticleController extends Controller
      */
     public function listAction(Request $request)
     {
+        echo 'toto';
         return [];
     }
 }

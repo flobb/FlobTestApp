@@ -6,7 +6,7 @@ parameters:
     database_password: 719QV911TMB3Qea
 
     mailer_transport:  smtp
-    mailer_host:       127.0.0.1
+    mailer_host:       flobmail
     mailer_user:       ~
     mailer_password:   ~
 

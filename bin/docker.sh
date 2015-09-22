@@ -4,8 +4,6 @@
 # Invoke the containers
 #
 
-cd docker
-
 case "$1" in
     start)
         echo "Starting all containers..."
@@ -25,5 +23,3 @@ case "$1" in
         exit 1
         ;;
     esac
-
-cd ..

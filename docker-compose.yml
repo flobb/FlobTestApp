@@ -1,0 +1,55 @@
+flobmail:
+  image: jderusse/mailcatcher
+
+blackfire:
+  image: blackfire/blackfire
+  environment:
+    - BLACKFIRE_SERVER_ID
+    - BLACKFIRE_SERVER_TOKEN
+
+flobmysql:
+  build: ./docker/mysql/
+  volumes:
+    - ./docker/mysql/data/:/var/lib/mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=719QV911TMB3Qea
+
+flobphp:
+  build: ./docker/php/
+  links:
+    - flobmail
+    - blackfire
+    - flobmysql
+  volumes:
+    - ./:/app
+  volumes_from:
+    - flobvolumes
+  environment:
+    - BLACKFIRE_CLIENT_ID
+    - BLACKFIRE_CLIENT_TOKEN
+
+flobtool:
+  build: ./docker/tool/
+  links:
+    - flobphp
+    - flobmysql
+  volumes:
+    - ./:/app
+    - ~/.composer:/var/www/.composer
+    - ~/.ssh/known_hosts:/var/www/.ssh/known_hosts:ro
+    - $SSH_AUTH_SOCK:/tmp/ssh_auth_sock:ro
+  volumes_from:
+    - flobvolumes
+  environment:
+    - SSH_AUTH_SOCK=/tmp/ssh_auth_sock
+
+flobvolumes:
+  image: busybox
+  command: chown 1000:1000 -R /app
+  volumes:
+    - /app/web/uploads
+    - /app/app/cache
+    - /app/app/logs
+    - /app/vendor
+    - /etc/timezone:/etc/timezone:ro
+    - /etc/localtime:/etc/localtime:ro

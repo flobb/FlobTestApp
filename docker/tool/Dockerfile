@@ -1,4 +1,4 @@
-FROM docker_flobphp
+FROM flobtestapp_flobphp
 
 # Add composer
 RUN curl -k -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -13,4 +13,4 @@ VOLUME ["/app"]
 WORKDIR /app
 
 # Default command
-CMD ["/bin/bash"]
+CMD ["tail", "-f",  "/dev/null"]
