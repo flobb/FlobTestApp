@@ -9,6 +9,7 @@ blackfire:
 
 flobmysql:
   build: ./docker/mysql/
+
   volumes:
     - ./docker/mysql/data/:/var/lib/mysql
   environment:
@@ -16,6 +17,7 @@ flobmysql:
 
 flobphp:
   build: ./docker/php/
+  container_name: flobphp
   links:
     - flobmail
     - blackfire
@@ -30,6 +32,7 @@ flobphp:
 
 flobtool:
   build: ./docker/tool/
+  container_name: flobtool
   links:
     - flobphp
     - flobmysql

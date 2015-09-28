@@ -1,5 +1,6 @@
-FlobTestApp
-===========
+# FlobTestApp
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/286c721e-caf4-4041-bc92-b78bab79f494/mini.png)](https://insight.sensiolabs.com/projects/286c721e-caf4-4041-bc92-b78bab79f494)
 
 This project is a Symfony application with :
 - [Docker](https://www.docker.com) which provide all the project requirements
@@ -7,7 +8,7 @@ This project is a Symfony application with :
 - articles, movies and persons entities with fixtures
 - a basic backend
 
-# Requirements
+## Requirements
 
 * Docker (https://docs.docker.com/installation/#installation)[https://docs.docker.com/installation/#installation]
 * Docker-Compose (https://docs.docker.com/compose/install/)[https://docs.docker.com/compose/install/]
@@ -20,9 +21,9 @@ This project rely on thoses containers :
 - flobvolumes: shared files of the project
 - blackfire: provide all logic to run tests with blackfire
 
-# Setup
+## Setup
 
-## Blackfire (optionnal)
+### Blackfire (optionnal)
 
 * go to your Blackfire [credentials page](https://blackfire.io/account/credentials)
 * you need to add the credentials to your environment variables, add to your ```.bashrc```:
@@ -39,7 +40,7 @@ export BLACKFIRE_CLIENT_TOKEN=XXXX
 
 Now your credentials will be added at runtime to the right container.
 
-## Project for developement
+### Project for developement
 
 * Clone the project
 * bin/docker.sh sh
@@ -48,7 +49,7 @@ Now your credentials will be added at runtime to the right container.
 
 You're ready
 
-# Every day work
+## Every day work
 
 To work start the ecosystem:
 ```bash
@@ -66,13 +67,9 @@ bin/docker.sh sh
 ```
 
 On which url the project is available?
-```bash
-docker ps
-```
+The url is: [http://flobphp.docker](http://flobphp.docker).
 
-The url are: mycontainername.docker.
-
-# It doesn't work?!
+## It doesn't work?!
 
 - check the host IP seen from the containers:
 
