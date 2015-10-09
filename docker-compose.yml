@@ -9,7 +9,6 @@ blackfire:
 
 flobmysql:
   build: ./docker/mysql/
-
   volumes:
     - ./docker/mysql/data/:/var/lib/mysql
   environment:
