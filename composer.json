@@ -1,5 +1,6 @@
 {
     "name": "florianbelhomme/flob-test-app",
+    "description": "Small SF2 application useful for test purpose",
     "license": "MIT",
     "type": "project",
     "autoload": {
@@ -20,7 +21,6 @@
         "sensio/distribution-bundle": "~4.0",
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
-        	
         "stof/doctrine-extensions-bundle": "^1.1",
         "doctrine/doctrine-fixtures-bundle": "^2.2",
         "javiereguiluz/easyadmin-bundle": "^1.4"
